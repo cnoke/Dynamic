@@ -56,7 +56,7 @@ public class LApplication extends BaseApplication {
     public void onCreate() {
 
         isDebug= BuildConfig.DEBUG;
-        if("com.knd.equipment".equals(ProcessUtils.getProcessName(this))){
+        if("com.example.dynamic".equals(ProcessUtils.getProcessName(this))){
             taskMap.put("initcomm", new Task("initcomm" ,false) {
                 @Override
                 protected void run(@NotNull String s) {
