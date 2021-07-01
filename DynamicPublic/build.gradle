@@ -1,0 +1,47 @@
+apply plugin: 'java-library'
+apply plugin: 'maven'
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+//    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compileOnly files('libs/android25.jar')
+//    compileOnly rootProject.ext.dependencies["appcompat"]
+    implementation 'com.google.auto:auto-common:0.10'
+
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc7'
+    compileOnly 'com.google.auto.service:auto-service-annotations:1.0-rc7'
+
+    implementation 'com.squareup:javapoet:1.8.0'
+
+//    implementation "com.gym.dynamic:dynamicannotations:1.0-SNAPSHOT"
+    implementation project(":dynamicAnnotations")
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: 'https://packages.aliyun.com/maven/repository/2044847-release-QxVsG4/') {
+                authentication(
+                        userName: gradle.username,
+                        password: gradle.password
+                )
+            }
+            snapshotRepository(url: 'https://packages.aliyun.com/maven/repository/2044847-snapshot-GV2hv0/') {
+                authentication(
+                        userName: gradle.username,
+                        password: gradle.password
+                )
+            }
+            pom.version = '1.0-SNAPSHOT'
+            pom.artifactId = 'dynamicPublic'
+            pom.groupId = 'com.gym.dynamic'
+        }
+    }
+}

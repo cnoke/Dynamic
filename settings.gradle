@@ -1,0 +1,10 @@
+include ':app'
+include ':arouter-compiler'
+include ':DynamicPublic'
+include ':common'
+include ':dynamicpage'
+include ':base'
+include ':network'
+include ':dynamicComplier'
+include ':dynamicAnnotations'
+rootProject.name = "Dynamic"

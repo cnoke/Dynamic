@@ -1,0 +1,116 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        consumerProguardFiles 'consumer-rules.pro'
+
+        buildConfigField "boolean", "NEED_MMKV", "" + rootProject.needMMKV + ""
+    }
+
+    buildTypes {
+        release {
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding{
+        enabled true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+
+    api rootProject.ext.dependencies["kotlin"]
+    api rootProject.ext.dependencies["appcompat"]
+    api rootProject.ext.dependencies["eventbus"]
+    api rootProject.ext.dependencies["anchors"]
+
+    //image
+    api rootProject.ext.dependencies["glide"]
+    kapt rootProject.ext.dependencies["glide-compiler"]
+
+    //rx
+    //    api 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
+    //引入rxjava适配器，方便rxjava与retrofit的结合
+    api rootProject.ext.dependencies["retrofit-adapter-rxjava"]
+    //引入rxandroid
+    api rootProject.ext.dependencies["rxjava-rxandroid"]
+    api rootProject.ext.dependencies["rxandroid"]
+    api rootProject.ext.dependencies["rxpermissions"]
+
+
+    //widget
+    api rootProject.ext.dependencies["constraintlayout"]
+    // https://mvnrepository.com/artifact/com.google.android.material/material
+    api rootProject.ext.dependencies["material"]
+    api rootProject.ext.dependencies["loadsir"]
+    api rootProject.ext.dependencies["baseRecyclerViewAdapterHelper"]
+    api rootProject.ext.dependencies["swiperefreshlayout"]
+    api rootProject.ext.dependencies["refresh-layout-kernel"]   //核心必须依赖
+    api rootProject.ext.dependencies["refresh-header-classics"]    //经典刷新头
+    api rootProject.ext.dependencies["refresh-header-material"]    //谷歌刷新头
+    api rootProject.ext.dependencies["refresh-footer-ball"]        //球脉冲加载
+
+    //android room
+    api rootProject.ext.dependencies["room-runtime"]
+    // optional - Kotlin Extensions and Coroutines support for Room
+    api rootProject.ext.dependencies["room-ktx"]
+    // optional - RxJava support for Room
+    api rootProject.ext.dependencies["room-rxjava2"]
+    kapt rootProject.ext.dependencies["room-compiler"] // For Kotlin use kapt instead of annotationProcessor
+
+    //tools
+    api rootProject.ext.dependencies["router"]
+    api rootProject.ext.dependencies["gson"]
+
+    api rootProject.ext.dependencies["mmkv"]
+
+    //检测内存泄漏
+    debugImplementation rootProject.ext.dependencies["leakcanary"]
+}
+
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: 'https://packages.aliyun.com/maven/repository/2044847-release-QxVsG4/') {
+                authentication(
+                        userName: gradle.username,
+                        password: gradle.password
+                )
+            }
+            snapshotRepository(url: 'https://packages.aliyun.com/maven/repository/2044847-snapshot-GV2hv0/') {
+                authentication(
+                        userName: gradle.username,
+                        password: gradle.password
+                )
+            }
+            pom.version = '1.1.51'
+            pom.artifactId = 'base'
+            pom.groupId = 'com.gym.base'
+        }
+    }
+}

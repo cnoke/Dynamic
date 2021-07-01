@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="2dp"
+            android:layout_width="202dp"
+            android:layout_height="134.67dp">
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginTop="9dp"
+            android:textColor="#ff555555"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/cv_image"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/tv_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:visibility="gone"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:id="@+id/tv_flag"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="13.33sp"
+            android:textColor="#AAA9A9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+
+    defaultConfig {
+        applicationId "com.example.dynamic"
+        minSdkVersion rootProject.android["minSdkVersion"]
+        targetSdkVersion rootProject.android["targetSdkVersion"]
+        versionCode rootProject.android["versionCode"]
+        versionName rootProject.android["versionName"]
+        ndk{
+            abiFilters rootProject.abi
+        }
+        // 64k
+        multiDexEnabled true
+
+        buildConfigField "int", "MOTHERBOARD", ""+rootProject.motherboard+""
+        buildConfigField "String", "BUGLY_KEY", "\"" + rootProject.buglyKey + "\""
+        buildConfigField "String", "URL_CONFIG", "\"" + rootProject.ext.url["debug"] + "\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding{
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+//配置阿里ARouter路由
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(":network")
+    implementation project(":dynamicpage")
+    implementation rootProject.ext.dependencies["multidex"]
+//    kapt rootProject.ext.dependencies["router-compiler"]
+    kapt project(":arouter-compiler")
+}

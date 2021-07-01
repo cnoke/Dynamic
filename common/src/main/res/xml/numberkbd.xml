@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard android:keyWidth="60dp"
+    android:keyHeight="60dp"
+    android:horizontalGap="1dp"
+    android:verticalGap="1dp"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <Row>
+        <Key android:codes="55" android:keyLabel="7"   android:popupCharacters="7" />
+        <Key android:codes="56" android:keyLabel="8" android:popupCharacters="8" />
+        <Key android:codes="57" android:keyLabel="9" android:popupCharacters="9" />
+    </Row>
+    <Row>
+        <Key android:codes="52" android:keyLabel="4" android:keyEdgeFlags="left" android:popupCharacters="4" />
+        <Key android:codes="53" android:keyLabel="5" android:popupCharacters="5" />
+        <Key android:codes="54" android:keyLabel="6"  android:popupCharacters="6"/>
+    </Row>
+    <Row>
+        <Key android:codes="49"    android:keyLabel="1"  android:keyEdgeFlags="left" android:popupCharacters="1" />
+        <Key android:codes="50"    android:keyLabel="2"  android:popupCharacters="2"/>
+        <Key android:codes="51"    android:keyLabel="3"   android:popupCharacters="3"/>
+    </Row>
+    <Row>
+        <Key android:codes="46"   android:keyLabel="" android:keyEdgeFlags="left"  android:popupCharacters=""/>
+<!--       <Key/>-->
+        <Key android:codes="48"  android:keyLabel="0"  android:popupCharacters="0" android:keyEdgeFlags="right"/>
+        <Key android:codes="-5"  android:keyIcon="@drawable/common_ic_delete" android:isRepeatable="true" />
+
+    </Row>
+</Keyboard>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="94dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_top"
+            android:layout_marginTop="10dp"
+            android:layout_width="47.76dp"
+            android:layout_height="47.76dp">
+
+            <View
+                android:id="@+id/today_background"
+                android:layout_width="47.76dp"
+                android:layout_height="47.76dp"
+                android:background="@drawable/dynamic_ic_oval_b4559"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+
+            <View
+                android:id="@+id/selected_background"
+                android:layout_width="43.98dp"
+                android:layout_height="43.98dp"
+                android:background="@drawable/dynamic_ic_voal_3f629d_be5491"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="21.33sp"
+                android:textColor="#BFBFBF"
+                android:text="19"/>
+
+            <ImageView
+                android:id="@+id/maker"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/dynamic_ic_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_mark_nub"
+            android:visibility="gone"
+            android:layout_below="@+id/rl_top"
+            android:layout_marginTop="3dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+</layout>

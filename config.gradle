@@ -1,0 +1,213 @@
+ext{
+
+    android = [
+            compileSdkVersion       : 30,
+            buildToolsVersion       : "28.0.3",
+            minSdkVersion           : 21,
+            targetSdkVersion        : 26,
+            versionCode             : 1,
+            versionName             : "1.1.60"
+    ]
+
+    url = [
+            release     : "http://124.70.177.170/front/front/",
+            debug       : "http://124.70.177.170/front/front/",
+//            debug       : "http://192.168.1.42:9000/front/front/"
+    ]
+
+    bucketname = [
+            dev      : "knd-vita-dev",
+            test     : "knd-vita-test"
+    ]
+
+    obs = [
+            endPoint : "obs.cn-east-3.myhuaweicloud.com",
+            ak       : "XXAQGOL8KYHZVJJJ6E92",
+            sk       : "SswmAFw71WhxAw0ASValmMRL7rE6ijRzBAd3g4v4",
+            imageFoldername : "pro/image/",
+            videoFoldername : "pro/video/",
+            bucketname : bucketname["dev"],
+            bucketnameDebug : bucketname["test"],
+            releasebucketname : "knd-vita"
+    ]
+
+//    abi = "armeabi-v7a"
+    abi = "arm64-v8a"
+    //下控串口路径
+    serialPorPath = "/dev/ttyS4"
+//    serialPorPath = "/dev/ttyMT1"
+
+    //是否有灯
+    enableLight = false
+    //灯控串口路径
+    lightSerialPorPath = "/dev/ttyS6"
+//    lightSerialPorPath = "/dev/ttyMT0"
+    //灯珠个数
+    lightNub = 9
+
+    //0默认主板1亿晟主板2泰达讯
+    motherboard = 1
+
+    //是否显示网速监测
+    showNetSpeed = false
+    //是否处于发布状态，组件的状态切换
+    isRelease = true
+    //腾讯Bugly 验证key
+    buglyKey = "d9910aa2a4"
+    //百度地图key
+    baiduApiKey = "QuVKxvW7g5QQc6zT8CA6kxwORWgfy5pC"
+    //亿晟主板百度地图key
+    isYsbaiduApiKey = "rgjPfWB8IaF4CsdH0o5sbUW1c7cSoDhi"
+    //高德地图key
+    gaodeApiKey = "e13b6c73adc4d063d8bb57f99065d64d"
+    //亿晟主板高德地图key
+    isYsgaodeApiKey = "9bfa06ab21dcd9ab31c5febb3da2a9bb"
+    //MMKV代替sharePreferences
+    needMMKV = true
+
+    modules = [
+       gym:"com.knd.gym",
+       user_center:"com.knd.user_center",
+       setting:"com.knd.setting",
+       shop:"com.knd.shop",
+       live:"com.knd.live"
+    ]
+
+    version = [
+            retrofitSdkVersion      : "2.8.1",
+            glideSdkVersion         : "4.11.0",
+            refreshLayoutVersion        : "2.0.1",
+            roomVersion       : "2.2.5",
+            okhttp                  : "3.14.7"
+    ]
+
+    dependencies = [
+
+            "base"                   :"com.gym.base:base:1.1.51",
+            //support
+            "kotlin"                 :"org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+            "appcompat"              : "androidx.appcompat:appcompat:1.2.0",
+            "constraintlayout"       : "androidx.constraintlayout:constraintlayout:2.0.4",
+            "multidex"               : "com.android.support:multidex:1.0.2",
+
+            //network
+            "retrofit"                 : "com.squareup.retrofit2:retrofit:${version["retrofitSdkVersion"]}",
+            "retrofit-converter-gson"  : "com.squareup.retrofit2:converter-gson:${version["retrofitSdkVersion"]}",
+            "retrofit-adapter-rxjava2" : "com.squareup.retrofit2:adapter-rxjava2:${version["retrofitSdkVersion"]}",
+            "okhttp"                   : "com.squareup.okhttp3:okhttp:${version["okhttp"]}",
+
+            //image
+            "glide"                    : "com.github.bumptech.glide:glide:${version["glideSdkVersion"]}",
+            "glide-compiler"           : "com.github.bumptech.glide:compiler:${version["glideSdkVersion"]}",
+
+            //router
+            "router"                : "com.alibaba:arouter-api:1.5.1",
+            "router-compiler"       : "com.gym.arouter:arouter-compiler:1.0-SNAPSHOT",
+
+            //引入rx
+            "retrofit-adapter-rxjava"   :'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0',
+            "rxjava-rxandroid"      :'io.reactivex.rxjava2:rxandroid:2.0.2',
+            "rxandroid"             :'io.reactivex:rxandroid:1.2.1',
+
+            //widget
+            //RecyclerView分割线
+            "recyclerviewdecoration": "com.arjinmc.android:recyclerviewdecoration:4.1",
+            "baseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4",
+            //下拉刷新
+            "swiperefreshlayout"    : "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0",
+            "refresh-layout-kernel" : "com.scwang.smart:refresh-layout-kernel:${version["refreshLayoutVersion"]}",
+            "refresh-header-classics": "com.scwang.smart:refresh-header-classics:${version["refreshLayoutVersion"]}",
+            "refresh-header-material": "com.scwang.smart:refresh-header-material:${version["refreshLayoutVersion"]}",
+            "refresh-footer-ball"   : "com.scwang.smart:refresh-footer-ball:${version["refreshLayoutVersion"]}",
+            "spinKit"               : "com.github.ybq:Android-SpinKit:1.4.0",
+            //日历
+            "supercalendar"            : "com.gym.widget:calendar:1.0-SNAPSHOT",
+            //时间选择器
+            "pickerView"            : "com.contrarywind:Android-PickerView:4.1.9",
+            "material"               : "com.google.android.material:material:1.1.0",
+            "loadsir"               : "com.kingja.loadsir:loadsir:1.3.8",
+            //图表
+            "MPAndroidChart"         : "com.github.SubhrajyotiSen:MPAndroidChart:v3.1.1",
+            //轮播图
+            "banner"                : "com.youth.banner:banner:2.1.0",
+            //vlayout
+            "vlayout"               : "com.gym.widget:vlayout:1.0-SNAPSHOT",
+
+            //高德地图
+            "gaodemap3d"           :"com.amap.api:3dmap:latest.integration",
+            //高德地图搜索
+            "gaodesearch"           :"com.amap.api:search:latest.integration",
+            //高德地图定位
+            "gaodelocation"         :"com.amap.api:location:latest.integration",
+
+            //tools
+            "gson"                  : "com.google.code.gson:gson:2.8.5",
+            //字符串处理
+            "spanny"                : "com.binaryfork:spanny:1.0.4",
+            "eventbus"              : "org.greenrobot:eventbus:3.2.0",
+            "xlog"                  : "com.elvishew:xlog:1.6.1",
+            //腾讯Bugly异常上报
+            "crashreport"           : "com.tencent.bugly:crashreport:3.3.3",
+            "nativecrashreport"     : "com.tencent.bugly:nativecrashreport:3.7.7",
+            //权限
+            "rxpermissions"         : "com.github.tbruyelle:rxpermissions:0.10.2",
+            //切面
+            "aspectjrt"             : "org.aspectj:aspectjrt:1.8.13",
+            //串口
+            "serialport"            : "com.knd.github:AndroidSerialPort:1.0.1",
+            //代替sharepreferences 高性能存储
+            "mmkv"                         : "com.tencent:mmkv-static:1.2.7",
+            //启动优化异步加载
+            "anchors"                      : "com.github.YummyLau:Anchors:v1.1.4",
+
+            "wifimanager"           : "com.hacknife:wifimanager:1.0.2",
+            //播放器
+            "jiaozivideoplayer"     : "cn.jzvd:jiaozivideoplayer:7.4.2",
+            "ijkplayer"             : "tv.danmaku.ijk.media:ijkplayer-java:0.8.8",
+            "exoplayer"             : "com.google.android.exoplayer:exoplayer:2.11.3",
+            "pldroidplayer"         : "com.gym.video:pldroidplayer:2.2.0",
+            "aliyunPlayer"         : "com.aliyun.sdk.android:AliyunPlayer:5.3.2-full",
+            //汉字转拼音库
+            "tinypinyin"            : "com.github.promeg:tinypinyin:2.0.3",
+
+
+            //vlc播放器内核
+            "vlcvideo"              : "com.gym.video:vlcvideo:1.0-SNAPSHOT",
+            //二维码
+            "zxing"                 : "com.google.zxing:core:3.3.0",
+            //华为OBS
+            "esdkObs"               : "com.huawei.storage:esdk-obs-android:3.1.3",
+            //下载框架
+            "aria"                  : "com.arialyy.aria:core:3.8.15",
+            "ariaCompiler"          : "com.arialyy.aria:compiler:3.8.15",
+            //dlna投屏框架
+            "cling"                 : "org.fourthline.cling:cling:2.1.1",
+            "cling-core"            : "org.fourthline.cling:cling-core:2.1.1",
+            "cling-support"         : "org.fourthline.cling:cling-support:2.1.1",
+            "cling-mediarenderer"   : "org.fourthline.cling:cling-mediarenderer:2.1.1",
+            "slf4j-api"             : "org.slf4j:slf4j-api:1.7.25",
+            "slf4j-jdk"             : "org.slf4j:slf4j-jdk14:1.7.25",
+            "javax-servlet"         : "org.eclipse.jetty.orbit:javax.servlet:3.0.0.v201112011016",
+            "jetty-server"          : "org.eclipse.jetty:jetty-server:8.1.22.v20160922",
+            "jetty-servlet"         : "org.eclipse.jetty:jetty-servlet:8.1.22.v20160922",
+            "jetty-client"          : "org.eclipse.jetty:jetty-client:8.1.22.v20160922",
+            //投屏框架
+            "castscreen"            : "com.gym.castscreen:castscreen:1.0-SNAPSHOT",
+            "castannotations"       : "com.gym.castscreen:castannotations:1.0-SNAPSHOT",
+            "castcomplier"          : "com.gym.castscreen:castcomplier:1.0-SNAPSHOT",
+
+            //android room
+            "room-runtime"          : "androidx.room:room-runtime:${version["roomVersion"]}",
+            "room-ktx"              : "androidx.room:room-ktx:${version["roomVersion"]}",
+            "room-rxjava2"          : "androidx.room:room-rxjava2:${version["roomVersion"]}",
+            "room-compiler"         : "androidx.room:room-compiler:${version["roomVersion"]}",
+
+            "dynamicannotations"    : "com.gym.dynamic:dynamicannotations:1.0-SNAPSHOT",
+            "dynamicComplier"       : "com.gym.dynamic:dynamicComplier:1.0-SNAPSHOT",
+            "dynamicPublic"       : "com.gym.dynamic:dynamicPublic:1.0-SNAPSHOT",
+
+            //检测内存泄漏
+            "leakcanary"             : "com.squareup.leakcanary:leakcanary-android:2.5"
+
+    ]
+}

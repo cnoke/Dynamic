@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="455.33dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:background="@drawable/common_bg_up_26_67dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textColor="#333333"
+            android:textSize="22.67sp"
+            android:text="日期选择"/>
+
+        <LinearLayout
+            android:id="@+id/ll_close"
+            android:layout_width="68.67dp"
+            android:layout_height="68.67dp"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="12.69dp"
+                android:layout_height="12.69dp"
+                app:tint="#BFBFBF"
+                android:src="@drawable/common_ic_close"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="@drawable/common_bg_down_26_67dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginTop="17dp"
+            android:id="@+id/timepicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="209dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_year"
+                android:layout_weight="0.96"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="19.33dp"
+                    android:text="年"
+                    android:textSize="21.33sp"
+                    android:textColor="#675D99"/>
+
+                <com.contrarywind.view.WheelView
+                    android:id="@+id/year"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_month"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="19.33dp"
+                    android:text="月"
+                    android:textSize="21.33sp"
+                    android:textColor="#675D99"/>
+
+                <com.contrarywind.view.WheelView
+                    android:id="@+id/month"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_day"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="19.33dp"
+                    android:text="日"
+                    android:textSize="21.33sp"
+                    android:textColor="#675D99"/>
+
+                <com.contrarywind.view.WheelView
+                    android:id="@+id/day"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_hour"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="19.33dp"
+                    android:text="时"
+                    android:textSize="21.33sp"
+                    android:textColor="#675D99"/>
+
+                <com.contrarywind.view.WheelView
+                    android:id="@+id/hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_min"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="19.33dp"
+                    android:text="分"
+                    android:textSize="21.33sp"
+                    android:textColor="#675D99"/>
+
+                <com.contrarywind.view.WheelView
+                    android:id="@+id/min"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_secondn"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="19.33dp"
+                    android:text="秒"
+                    android:textSize="21.33sp"
+                    android:textColor="#675D99"/>
+
+                <com.contrarywind.view.WheelView
+                    android:id="@+id/second"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="21.33dp"
+            android:layout_marginBottom="29.33dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/btn_cancel"
+                android:background="@drawable/common_bg_btn_d2d2d2_42dp"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="#FFFFFF"
+                android:textSize="25.33sp"
+                android:layout_width="169.33dp"
+                android:layout_height="52dp"/>
+
+            <TextView
+                android:id="@+id/btn_submit"
+                android:layout_marginStart="18dp"
+                android:background="@drawable/common_bg_btn_42dp"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="#FFFFFF"
+                android:textSize="25.33sp"
+                android:layout_width="169.33dp"
+                android:layout_height="52dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

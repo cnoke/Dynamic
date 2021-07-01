@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.knd.common.view.powerview.CircleProgress
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    app:common_antiAlias="true"
+    app:common_arcWidth="15dp"
+    app:common_dottedLineWidth="12dp"
+    app:common_arcColors="#886AE600"
+    app:common_hint=""
+    app:common_bgArcColor="#aaaa"
+    app:common_bgArcWidth="2dp"
+    app:common_hintSize="15dp"
+    app:common_maxValue="45"
+    app:common_startAngle="135"
+    app:common_sweepAngle="270"
+    app:common_textOffsetPercentInRadius="0.5"
+    app:common_unit=""
+    app:common_unitSize="15dp"
+    app:common_animTime="400"
+    app:common_value="3"
+    app:common_valueColor="#6AC600"
+    app:common_valueSize="15dp"
+    app:common_dottedLineCount="90">
+
+
+</com.knd.common.view.powerview.CircleProgress>

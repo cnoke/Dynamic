@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="level_0_green">#33D791</color>
+    <color name="level_1_blue">#6CBDF7</color>
+    <color name="level_2_yellow">#F1DD1C</color>
+    <color name="level_3_orange">#FFAD4A</color>
+    <color name="level_4_red">#FF6A5B</color>
+</resources>

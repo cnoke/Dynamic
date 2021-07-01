@@ -1,0 +1,108 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        consumerProguardFiles 'consumer-rules.pro'
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
+
+        buildConfigField "String", "OBS_ENDPOINT", "\"" + rootProject.ext.obs["endPoint"] + "\""
+        buildConfigField "String", "OBS_AK", "\"" + rootProject.ext.obs["ak"] + "\""
+        buildConfigField "String", "OBS_SK", "\"" + rootProject.ext.obs["sk"] + "\""
+        buildConfigField "String", "OBS_IMAGE", "\"" + rootProject.ext.obs["imageFoldername"] + "\""
+        buildConfigField "String", "OBS_VIDEO", "\"" + rootProject.ext.obs["videoFoldername"] + "\""
+        buildConfigField "String", "OBS_BUCKETNAME", "\"" + rootProject.ext.obs["bucketnameDebug"] + "\""
+        if(rootProject.motherboard == 1){
+            manifestPlaceholders = [GAODE_API_KEY_VALUE: rootProject.isYsgaodeApiKey]
+        }else{
+            manifestPlaceholders = [GAODE_API_KEY_VALUE: rootProject.gaodeApiKey]
+        }
+    }
+
+    resourcePrefix "common_"
+
+    buildTypes {
+        release {
+            //混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug{
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
+
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+dependencies {
+//    api rootProject.ext.dependencies["base"]
+    api project(":base")
+
+//    kapt rootProject.ext.dependencies["router-compiler"]
+    kapt project(":arouter-compiler")
+
+    kapt rootProject.ext.dependencies["room-compiler"] // For Kotlin use kapt instead of annotationProcessor
+
+    api rootProject.ext.dependencies["recyclerviewdecoration"]
+//    api rootProject.ext.dependencies["material-dialogs"]
+    api rootProject.ext.dependencies["spanny"]
+    api rootProject.ext.dependencies["spinKit"]
+    api rootProject.ext.dependencies["pickerView"]
+
+    api rootProject.ext.dependencies["xlog"]
+    api rootProject.ext.dependencies["crashreport"]
+    api rootProject.ext.dependencies["nativecrashreport"]
+
+    api rootProject.ext.dependencies["banner"]
+    api rootProject.ext.dependencies["zxing"]
+    api rootProject.ext.dependencies["esdkObs"]
+    api  rootProject.ext.dependencies["aria"]
+    kapt rootProject.ext.dependencies["ariaCompiler"]
+
+    api  rootProject.ext.dependencies["gaodemap3d"]
+    api  rootProject.ext.dependencies["gaodesearch"]
+    api  rootProject.ext.dependencies["gaodelocation"]
+
+    api  rootProject.ext.dependencies["vlayout"]
+    
+    api rootProject.ext.dependencies["serialport"]
+    api rootProject.ext.dependencies["supercalendar"]
+    api rootProject.ext.dependencies["dynamicannotations"]
+    kapt rootProject.ext.dependencies["dynamicComplier"]
+    kapt rootProject.ext.dependencies["dynamicPublic"]
+//    kapt project(":dynamicComplier")
+//    kapt project(":DynamicPublic")
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable type="com.knd.common.bean.UserInfo" name="user"/>
+    </data>
+
+    <com.knd.base.view.PullToRefreshRecyclerView
+        android:overScrollMode="never"
+        android:id="@+id/rv_content"
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</layout>

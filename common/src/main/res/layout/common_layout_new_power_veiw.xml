@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <!--          持续力力量盘              -->
+        <LinearLayout
+            android:id="@+id/con_power_view_lly"
+            android:visibility="invisible"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.knd.common.view.powerview.RotatePowerSettingView
+                android:layout_marginTop="30dp"
+                android:id="@+id/con_power_view"
+                app:common_power_text="持续力"
+                app:common_progress_ispowerview="false"
+                android:src="@mipmap/common_ic_user"
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+
+        </LinearLayout>
+
+        <!--          回心力力量盘              -->
+        <LinearLayout
+            android:id="@+id/back_power_view_lly"
+            android:visibility="invisible"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.knd.common.view.powerview.RotatePowerSettingView
+                android:id="@+id/back_power_view"
+                android:layout_marginTop="30dp"
+                app:common_power_text="回心力"
+                app:common_progress_ispowerview="false"
+                android:src="@mipmap/common_ic_user"
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+
+        </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/base_power_view"
+        android:layout_width="270dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/common_ic_power_view_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--          基础力量盘              -->
+        <com.knd.common.view.powerview.RotatePowerSettingView
+            android:id="@+id/new_powerView"
+            android:layout_marginBottom="40dp"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            app:common_progress_ispowerview="true"
+            app:common_power_text="基础力"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <LinearLayout
+            android:layout_width="260dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:paddingEnd="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tv_current_power"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="3"
+                android:textColor="#FE6B69"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:gravity="center"
+                android:text="kg"
+                android:textColor="#ACACAC"
+                android:textSize="12sp" />
+
+            <com.knd.common.view.powerview.PowerProgressView
+                android:id="@+id/progress_current_power"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="3dp" />
+
+            <!--            <com.knd.common.view.powerview.PowerProgressBar-->
+            <!--                android:background="@null"-->
+            <!--                android:maxHeight="6dp"-->
+            <!--                android:minHeight="6dp"-->
+            <!--                android:paddingEnd="8dp"-->
+            <!--                android:splitTrack="false"-->
+            <!--                android:thumb="@drawable/common_ic_seek_thumb_power"-->
+            <!--                android:progressDrawable="@drawable/common_progressbar_power_value"-->
+            <!--                android:id="@+id/progress_current_power"-->
+            <!--                android:progress="3"-->
+            <!--                android:max="45"-->
+            <!--                android:layout_gravity="center_vertical"-->
+            <!--                android:layout_marginStart="3dp"-->
+            <!--                style="@android:style/Widget.ProgressBar.Horizontal"-->
+            <!--                android:indeterminate="false"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="15dp"/>-->
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/iv_power_add"
+        android:orientation="vertical"
+        android:src="@mipmap/ic_power_view_add"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintStart_toEndOf="@id/base_power_view"
+        app:layout_constraintBottom_toBottomOf="@id/base_power_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/iv_power_remove"
+        android:orientation="vertical"
+        android:src="@mipmap/ic_power_view_remove"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintStart_toEndOf="@id/base_power_view"
+        app:layout_constraintBottom_toBottomOf="@id/base_power_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+        <!--遮盖层，拦截点击事件-->
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/power_view_unable_tv"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

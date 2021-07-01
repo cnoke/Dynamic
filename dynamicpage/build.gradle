@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+
+        buildConfigField "String", "URL_CONFIG", "\"" + rootProject.ext.url["debug"] + "\""
+    }
+
+    //加模块时需手动修改
+    resourcePrefix "dynamic_"
+
+    buildTypes {
+        release {
+            //混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    //开启databinding
+    dataBinding {
+        enabled true
+    }
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(":network")
+    kapt project(":arouter-compiler")
+//    kapt rootProject.ext.dependencies["router-compiler"]
+//    kapt rootProject.ext.dependencies["dynamicComplier"]
+    kapt project(":dynamicComplier")
+//    implementation project(":dynamicAnnotations")
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <ImageView
+        android:id="@+id/iv_button"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:scaleType="fitXY"/>
+
+</layout>

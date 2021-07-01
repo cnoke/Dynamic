@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="common_NewPowerCircleViewStyle">
+        <attr name="common_progress_color" format="color"/>
+        <attr name="common_progress_text_color" format="color"/>
+        <attr name="common_progress_text_size" format="dimension"/>
+        <attr name="common_progress_text_name_color" format="color"/>
+        <attr name="common_progress_text_name_size" format="dimension"/>
+        <attr name="common_progress_ispowerview" format="boolean"/>
+        <attr name="common_power_text" format="string|reference" />
+        <attr name="common_progress_border_width" format="dimension"/>
+
+    </declare-styleable>
+    
+    <!--首页实施力量刻度控件-->
+    <declare-styleable name="common_CurrPowerCircleProgressBar">
+        <!-- 是否开启抗锯齿 -->
+        <attr name="common_antiAlias" format="boolean" />
+        <!-- 圆弧起始角度，3点钟方向为0，顺时针递增，小于0或大于360进行取余 -->
+        <attr name="common_startAngle" format="float" />
+        <!-- 圆弧度数 -->
+        <attr name="common_sweepAngle" format="float" />
+        <!-- 设置动画时间 -->
+        <attr name="common_animTime" format="integer" />
+        <!-- 绘制内容的数值 -->
+        <attr name="common_maxValue" format="float" />
+        <attr name="common_value" format="float" />
+        <!-- 绘制内容的单位 -->
+        <attr name="common_unit" format="string|reference" />
+        <attr name="common_unitSize" format="dimension" />
+        <attr name="common_unitColor" format="color|reference" />
+        <!-- 绘制内容相应的提示语 -->
+        <attr name="common_hint" format="string|reference" />
+        <attr name="common_hintSize" format="dimension" />
+        <attr name="common_hintColor" format="color|reference" />
+        <!-- 精度，默认为0 -->
+        <attr name="common_precision" format="integer" />
+        <attr name="common_valueSize" format="dimension" />
+        <attr name="common_valueColor" format="color|reference" />
+        <!-- 背景圆弧颜色，默认白色 -->
+        <attr name="common_bgArcColor" format="color|reference" />
+        <!-- 圆弧宽度 -->
+        <attr name="common_arcWidth" format="dimension" />
+        <!-- 圆弧颜色， -->
+        <attr name="common_arcColors" format="color|reference" />
+        <!-- 文字的偏移量 相对于圆半径而言，默认三分之一 -->
+        <attr name="common_textOffsetPercentInRadius" format="float" />
+        <!-- 背景圆弧宽度 -->
+        <attr name="common_bgArcWidth" format="dimension" />
+        <!-- 线条数 -->
+        <attr name="common_dottedLineCount" format="integer" />
+        <!-- 圆弧跟虚线之间的距离 -->
+        <attr name="common_lineDistance" format="integer" />
+        <!-- 线条宽度 -->
+        <attr name="common_dottedLineWidth" format="dimension" />
+    </declare-styleable>
+
+
+    <!--头像控件-->
+    <declare-styleable name="common_AvatarView">
+        <attr name="common_avatarView_text_size" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="common_RulerView">
+        <attr name="common_rulerHeight" format="dimension"/>               <!--尺子的高度-->
+        <attr name="common_rulerToResultgap" format="dimension" />          <!--尺子距离结果的高度-->
+        <attr name="common_scaleGap" format="dimension" />                  <!--刻度间距-->
+        <attr name="common_scaleCount" format="integer" />                  <!--刻度数-->
+        <attr name="common_firstScale" format="float" />                    <!--默认选中的刻度-->
+        <attr name="common_maxScale" format="integer" />                    <!--最大刻度-->
+        <attr name="common_minScale" format="integer" />                    <!--最小刻度-->
+        <attr name="common_bgColor" format="color" />                       <!--背景色-->
+        <attr name="common_smallScaleColor" format="color" />               <!--小刻度的颜色-->
+        <attr name="common_midScaleColor" format="color" />                 <!--中刻度的颜色-->
+        <attr name="common_largeScaleColor" format="color" />               <!--大刻度的颜色-->
+        <attr name="common_scaleNumColor" format="color" />                 <!--刻度数的颜色-->
+        <attr name="common_resultNumColor" format="color" />                <!--结果字体的颜色-->
+        <attr name="common_ruler_unit" format="string" />                         <!--单位-->
+        <attr name="common_ruler_unitColor" format="color" />                     <!--单位颜色-->
+        <attr name="common_smallScaleStroke" format="dimension" />          <!--小刻度的宽度-->
+        <attr name="common_midScaleStroke" format="dimension" />            <!--中刻度的宽度-->
+        <attr name="common_largeScaleStroke" format="dimension" />          <!--大刻度的宽度-->
+        <attr name="common_resultNumTextSize" format="dimension" />         <!--结果字体大小-->
+        <attr name="common_scaleNumTextSize" format="dimension" />          <!--刻度字体大小-->
+        <attr name="common_unitTextSize" format="dimension" />              <!--单位字体大小-->
+        <attr name="common_showScaleResult" format="boolean" />             <!--是否显示结果值-->
+        <attr name="common_isBgRoundRect" format="boolean" />               <!--背景是否圆角-->
+        <attr name="common_scaleLimit" format="integer" />                  <!--相邻2个刻度之间的数量-->
+        <attr name="common_shownub" format="integer" />                     <!--显示刻度数量-->
+        <attr name="common_gradient" format="boolean" />                     <!--是否需要渐变-->
+
+    </declare-styleable>
+</resources>

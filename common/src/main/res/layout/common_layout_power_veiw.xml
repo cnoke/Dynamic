@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <!--          持续力力量盘              -->
+        <LinearLayout
+            android:id="@+id/con_power_view_lly"
+            android:visibility="invisible"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.knd.common.view.powerview.LittlePowerSettingView
+                android:id="@+id/con_power_view"
+                android:src="@mipmap/common_ic_user"
+                app:common_progress_color="#F29423"
+                app:common_progress_text_size="22sp"
+                app:common_progress_text_color="#F29423"
+                android:layout_width="160dp"
+                android:layout_height="160dp"/>
+
+            <TextView
+                android:text="持续力"
+                android:textColor="#A7A9A8"
+                android:textSize="16sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <!--          回心力力量盘              -->
+        <LinearLayout
+            android:id="@+id/back_power_view_lly"
+            android:visibility="invisible"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.knd.common.view.powerview.LittlePowerSettingView
+                android:id="@+id/back_power_view"
+                android:src="@mipmap/common_ic_user"
+                app:common_progress_color="#FF6B6B"
+                app:common_progress_text_size="22sp"
+                app:common_progress_text_color="#FF6B6B"
+                android:layout_width="160dp"
+                android:layout_height="160dp"/>
+
+            <TextView
+                android:text="回心力"
+                android:textColor="#A7A9A8"
+                android:textSize="16sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <!--          基础力量盘              -->
+        <com.knd.common.view.powerview.LittlePowerSettingView
+            android:id="@+id/new_powerView"
+            app:common_progress_color="#FF25C688"
+            app:common_progress_text_color="#25C688"
+            app:common_progress_text_size="50sp"
+            app:common_progress_ispowerview="true"
+            app:common_progress_text_name_size="12sp"
+            app:common_progress_text_name_color="#A7A9A8"
+            app:common_progress_border_width="20dp"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!--遮盖层，拦截点击事件-->
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/power_view_unable_tv"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,37 @@
+apply plugin: 'java-library'
+apply plugin: 'maven'
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: 'https://packages.aliyun.com/maven/repository/2044847-release-QxVsG4/') {
+                authentication(
+                        userName: gradle.username,
+                        password: gradle.password
+                )
+            }
+            snapshotRepository(url: 'https://packages.aliyun.com/maven/repository/2044847-snapshot-GV2hv0/') {
+                authentication(
+                        userName: gradle.username,
+                        password: gradle.password
+                )
+            }
+            pom.version = '1.0-SNAPSHOT'
+            pom.artifactId = 'dynamicannotations'
+            pom.groupId = 'com.gym.dynamic'
+        }
+    }
+}

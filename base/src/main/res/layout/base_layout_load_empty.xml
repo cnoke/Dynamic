@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/tv"
+        android:src="@mipmap/base_ic_net_empty"
+        android:id="@+id/image"
+        android:layout_width="364.67dp"
+        android:layout_height="349.33dp"/>
+
+    <TextView
+        android:layout_marginTop="@dimen/dp_40"
+        android:id="@+id/tv"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:text="暂无数据~"
+        android:textColor="#ffbdbdbd"
+        android:textSize="24sp" />
+
+</RelativeLayout>
